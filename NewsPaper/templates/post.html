@@ -1,0 +1,14 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+News   Публикация "{{ post.title|censor:"'" }}"
+{% endblock title %}
+
+{% block content %}
+  <h3>Публикация: {{ post.title|censor:"'" }}</h3>
+  {{ post.text|censor:"'" }}
+  <h6>Опубликовано {{ post.dateCreation|date:'d M Y H:i' }}</h6>
+
+{% endblock content %}
